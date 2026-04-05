@@ -145,6 +145,107 @@ opacity:0;
 .i5{left:75%;animation-delay:5s}
 .i6{left:90%;animation-delay:8s}
 
+/* about me */
+#about-card{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(120deg,#6366f1,#9333ea,#22d3ee,#facc15);
+background-size:300% 300%;
+animation:gradientMove 10s infinite alternate;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
+}
+
+.glass-container{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.glass-card{
+
+width:320px;
+padding:40px;
+text-align:center;
+
+background:rgba(255,255,255,0.1);
+border-radius:20px;
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+
+transition:0.4s;
+
+}
+
+.glass-card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.profile{
+
+width:100px;
+height:100px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+margin-bottom:15px;
+
+border:3px solid white;
+
+}
+
+.role{
+font-size:14px;
+margin:10px 0;
+color:#e5e7eb;
+}
+
+.location{
+font-size:13px;
+color:#cbd5f5;
+margin-bottom:15px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.socials img{
+width:24px;
+}
+
+.portfolio-btn{
+
+display:inline-block;
+
+padding:10px 22px;
+
+border-radius:30px;
+
+background:white;
+
+color:black;
+
+font-size:14px;
+
+text-decoration:none;
+
+}
+
 
 /* SECTIONS */
 
@@ -304,6 +405,7 @@ footer{text-align:center;padding:30px;background:#020617}
 <header>
 <canvas class="hero" id="heroCanvas"></canvas>
 <h1>Hi, I'm Sanjana 👋 </h1>
+<h3> FULL STACK DEVELOPER & AI ENGINEER </h3>
 <div class="typing" id="typing"></div>
 <button class="cta" onclick="scrollToSection('featured')">See My Work</button>
 
@@ -320,11 +422,56 @@ footer{text-align:center;padding:30px;background:#020617}
 </div>
 </header>
 
-<section id="skills" class="fade">
+<section id="about-card">
 
-<h2>Skills</h2>
+<div class="glass-container">
 
-<div class="skills">
+<div class="glass-card">
+
+<img src="real ai iamge.jpeg" class="profile">
+
+<h2>Sanjana</h2>
+
+<p class="role">
+AI Engineer <br>
+FastAPI Developer <br>
+Backend Developer
+</p>
+
+<p class="location">
+Lucknow, India
+</p>
+
+<div class="socials">
+
+<a href="https://github.com/Sanjana0024">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+</a>
+
+<a href="https://linkedin.com">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
+</a>
+
+<a href="mailto:youremail@gmail.com">
+📧
+</a>
+
+</div>
+
+<a href="resume.pdf" class="portfolio-btn">View Portfolio</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+    <div class="parallax"></div>
+
+<h2>Tech Stack</h2>
+
+<div class="Skills">
 
 <div class="skill-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></div>
 <div class="skill-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"></div>
@@ -415,7 +562,7 @@ function scrollToSection(id){document.getElementById(id).scrollIntoView({behavio
 function toggleMode(){document.body.classList.toggle('light')}
 
 /* typing animation */
-const roles=["AI Engineer","FastAPI Developer","Backend Engineer","Hackathon Builder"]
+const roles=["AI Engineer","FastAPI Developer","Backend Engineer","Hackathon Builder","Frontend Developer"]
 let i=0,j=0,cur="",del=false
 
 function type(){
